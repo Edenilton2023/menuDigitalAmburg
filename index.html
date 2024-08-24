@@ -18,20 +18,18 @@
   </head>
   <body>
     <!-- header -->
-    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+    <header class="w-full h-[300px] bg-zinc-900 bg-home bg-cover bg-center">
       <div class="w-full h-full flex flex-col justify-center items-center">
         <img
-          src="./assets/hamb-1.png"
+          src="./assets/logoShoya.png"
           alt="logo"
           class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
         />
 
-        <h1 class="text-2xl sm:text-3xl mb-2 font-bold text-white">
-          dev burguer
-        </h1>
-        <span class="text-white font-medium">rua santa barbara 47</span>
-        <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
-          <span class="text-white font-medium">seg a dom - 18:00 as 22:00</span>
+      
+       
+        <div class="hidden  bg-green-600 px-4 py-1 rounded-lg mt-5" id="data-span">
+          <span class="text-white font-medium">seg a dom - 11:00 as 22:00</span>
         </div>
       </div>
     </header>
@@ -169,17 +167,34 @@
         <div id="cart-items" class="flex  justify-between mb-2 flex-col"></div>
         <p class="font-bold mb-3">Total <span id="cart-total">0.00</span></p>
         <p class="font-bold">Mesa</p>
-        <input type="text"
+      
+        <input type="number"
+        
         placeholder="Digite o numero da mesa "
-        id="mesa"
-        class="w-full border-2 p-1 rounded my-1"/>
+           id="mesa"
+       placeholder="Digite o número do cartão"
+       class="w-full border-2 p-1 rounded my-1"
+       oninput="if(this.value.length > 2) this.value = this.value.slice(0, 2);"
 
         <p class="font-bold"> cartão</p>
         <input type="number"  
-        id="cod-cart"
-         placeholder="Digite o numero cartão "
+             id="cod-cart"
+       placeholder="Digite o número do cartão"
+       class="w-full border-2 p-1 rounded my-1"
+       oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);"
+       
             class="w-full border-2 p-1 rounded my-1"/>
-            <p  class="text-red-500  " id="dados-errado" >digite novamete </p>
+             <p class="font-bold">
+            observação</p>
+      
+        <input type="text"
+        
+        placeholder="... "
+           maxlength="60"
+        id="obs"
+        class="w-full border-2 p-1 rounded my-1"/>
+            
+            <p  class= " hidden  text-red-500 font-extrabold  " id="dados-errado" >Digite Novamete </p>
             <div class="flex items-center justify-between mt-5 w-full ">
           <button id="close-modal-btn">Fechar</button>
           <button id="checkout-btn" class="bg-green-500  text-white px-4 py-1 rounded">Finalizar Pedido</button>

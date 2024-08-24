@@ -13,10 +13,11 @@ const cartTotal = document.querySelector('#cart-total');
 const checkoutBtn = document.querySelector('#checkout-btn');
 const closeModalBtn = document.querySelector('#close-modal-btn');
 const cartCount = document.querySelector('#cart-count');
-const mesaInput = document.querySelector('#mesa');
+const mesa = document.querySelector('#mesa');
 const codCart = document.querySelector('#cod-cart');
+const observaçao = document.querySelector('#obs');
 const addresWarn = document.querySelector('#dados-errado');
-console.log(cartItemsContainer);
+
 
 let cart = []
 // abrir modal do carrinha
@@ -88,7 +89,7 @@ function updateCartModal(){
         <P>Cod : (${item.cod})</P>
         <P class= 'font-medium mt-2' >R$${item.price.toFixed(2)}</P>
         </div>
-        <button class = 'remove-from-cart-btn ' data-name="${item.nome}">
+        <button class = 'remove-from-cart-btn ' data-name="${item.name}">
      Delete
          <i class="fa-solid fa-trash text-lg text-black"></i>
         </button>
@@ -100,6 +101,80 @@ function updateCartModal(){
     })
     cartTotal.innerHTML= total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"
 
-    })//53:21 / 1:34:02
-
+    })
+    cartCount.innerHTML=cart.length
 }
+ //funçao para remover o item d carrinho
+ cartItemsContainer.addEventListener('click',(event) =>{
+    if(event.target.classList.contains('remove-from-cart-btn')){
+        const name = event.target.getAttribute('data-name');
+        removeItemCart(name);
+    }
+    
+ })
+
+ function removeItemCart(name){
+   //encontra o index que seja igual a o item.nome do cart
+   const index = cart.findIndex((item) => item.name === name);
+   if (index !== -1) {
+     const item = cart[index];
+     if (item.quantity > 1) {
+       item.quantity -= 1;
+       //comara funcao updateCartModal() para refazer a a lista
+       updateCartModal();
+       return
+     }
+     // caso so tenha 1 para remover 
+     cart.splice(index,1)
+            updateCartModal();
+   }
+ }
+ mesa.addEventListener('input',(event)=>{
+    let imputValue = event.target.value
+
+    
+ })
+  codCart.addEventListener('input', (event) => {
+    let imputValue = event.target.value;
+   if(imputValue.length !== ""){
+    codCart.classList.remove("border-red-500")
+     addresWarn.classList.add('hidden');
+
+   }
+    
+  
+ 
+  });
+   obs.addEventListener('input', (event) => {
+     let imputValue = event.target.value;
+    
+   });
+
+checkoutBtn.addEventListener('click',()=>{
+    if(cart.length ===  0 ) return
+    if(codCart.value ===  "" ){
+      addresWarn.classList.remove('hidden');
+    codCart.classList.add('border-red-500');
+ 
+    
+    return
+    }
+})
+
+// verificar  a hora e manipular a card horario
+ function checkRestantOpem(){
+    const data = new Date()
+    const hora = data.getHours()
+    return hora >= 11 &&  hora <22
+    
+    
+ }
+ const spanItem = document.getElementById("data-span")
+ const IsOpem = checkRestantOpem()
+ if (IsOpem){
+    spanItem.classList.remove('bg-red-500')
+    spanItem.classList.add('bg-green-600');
+ }else{
+     spanItem.classList.add('bg-red-500');
+     spanItem.classList.remove('bg-green-600');
+ }
