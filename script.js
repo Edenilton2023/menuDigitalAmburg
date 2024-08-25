@@ -15,7 +15,7 @@ const closeModalBtn = document.querySelector('#close-modal-btn');
 const cartCount = document.querySelector('#cart-count');
 const mesa = document.querySelector('#mesa');
 const codCart = document.querySelector('#cod-cart');
-const observaçao = document.querySelector('#obs');
+const observacao = document.querySelector('#obs');
 const addresWarn = document.querySelector('#dados-errado');
 
 
@@ -89,7 +89,7 @@ function updateCartModal(){
         <P>Cod : (${item.cod})</P>
         <P class= 'font-medium mt-2' >R$${item.price.toFixed(2)}</P>
         </div>
-        <button class = 'remove-from-cart-btn ' data-name="${item.name}">
+        <button class = 'remove-from-cart-btn  px-2  py-1' data-name="${item.name}">
      Delete
          <i class="fa-solid fa-trash text-lg text-black"></i>
         </button>
@@ -159,7 +159,14 @@ checkoutBtn.addEventListener('click',()=>{
     
     return
     }
-})
+// envia pedido para o apido whatss
+// const cartItems = cart.map((item)=>{
+//     return(`${item.name}(quantidade: ${item.quantity})$Preço: R$ ${item.price}observaçao: ${item.observacao}`)
+// })
+// console.log(cartItems);
+// // dar um F12 pra lembra
+
+// })
 
 // verificar  a hora e manipular a card horario
  function checkRestantOpem(){

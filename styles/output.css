@@ -884,16 +884,12 @@ video {
   height: 8rem;
 }
 
-.h-\[420px\] {
-  height: 420px;
+.h-\[300px\] {
+  height: 300px;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-\[300px\] {
-  height: 300px;
 }
 
 .w-32 {
@@ -1960,7 +1956,7 @@ video {
 }
 
 .bg-home {
-  background-image: url('/assets/topo-gg.png');
+  background-image: url('./assets/capa.png');
 }
 
 .decoration-slice {
@@ -2089,6 +2085,10 @@ video {
   padding: 1.25rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2122,6 +2122,11 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .text-left {
@@ -2755,11 +2760,6 @@ body{
 }
 
 @media (min-width: 640px) {
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .sm\:underline {
     text-decoration-line: underline;
   }
