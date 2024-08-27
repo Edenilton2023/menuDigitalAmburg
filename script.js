@@ -86,12 +86,12 @@ function updateCartModal(){
         <div>
         <P class= 'font-bold'>${item.name}</P>
         <P>Qtd : (${item.quantity}) </P>
-        <P>Cod : (${item.cod})</P>
+        <P>Cõd: (${item.cod})</P>
         <P class= 'font-medium mt-2' >R$${item.price.toFixed(2)}</P>
         </div>
-        <button class = 'remove-from-cart-btn  px-4  py-4  flex items-center rounded-s-full' data-name="${item.name}">
+        <button class = ' mr-2 remove-from-cart-btn  px-6  py-4  flex items-center rounded-s-full' data-name="${item.name}">Excruir
    
-         <i class="fa-solid fa-trash text-lg text-black"></i>
+         
         </button>
        </div>
         `;
@@ -102,7 +102,11 @@ function updateCartModal(){
     cartTotal.innerHTML= total.toLocaleString("pt-BR",{style:"currency",currency:"BRL"
 
     })
-    cartCount.innerHTML=cart.length
+
+    
+    cartCount.innerHTML = cart.length
+    console.log(cart.length);
+    
 }
  //funçao para remover o item d carrinho
  cartItemsContainer.addEventListener('click',(event) =>{

@@ -765,6 +765,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -884,12 +888,24 @@ video {
   height: 8rem;
 }
 
-.h-\[300px\] {
-  height: 300px;
+.h-\[600px\] {
+  height: 600px;
 }
 
 .h-full {
   height: 100%;
+}
+
+.h-\[px\] {
+  height: px;
+}
+
+.h-\[900px\] {
+  height: 900px;
+}
+
+.h-\[1200px\] {
+  height: 1200px;
 }
 
 .w-32 {
@@ -1961,7 +1977,7 @@ video {
 }
 
 .bg-home {
-  background-image: url('./assets/capa.png');
+  background-image: url('/assets/capa.png');
 }
 
 .decoration-slice {
@@ -2113,6 +2129,11 @@ video {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-1 {
@@ -2283,11 +2304,6 @@ video {
 
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-blue-500 {
@@ -2719,11 +2735,6 @@ body{
       max-width: 1536px;
     }
   }
-}
-
-.hover\:-rotate-3:hover {
-  --tw-rotate: -3deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:rotate-6:hover {
