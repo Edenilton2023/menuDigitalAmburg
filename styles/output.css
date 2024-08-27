@@ -659,6 +659,10 @@ video {
   inset: -0.25rem;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -673,6 +677,38 @@ video {
 
 .top-0 {
   top: 0px;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.-top-20 {
+  top: -5rem;
+}
+
+.-top-0 {
+  top: -0px;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.bottom-12 {
+  bottom: 3rem;
 }
 
 .isolate {
@@ -1774,10 +1810,6 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .rounded-md {
   border-radius: 0.375rem;
 }
@@ -1966,10 +1998,6 @@ video {
 
 .bg-home {
   background-image: url('/assets/bg.png');
-}
-
-.bg-home2 {
-  background-image: url('/assets/capa.png');
 }
 
 .decoration-slice {
