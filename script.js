@@ -3,6 +3,11 @@
 
 
 
+const header = document.querySelector('header')
+header.classList.remove('bg-home');
+
+header.classList.add('bg-home2')
+console.log(header);
 
 
 const menu = document.querySelector('#menu');

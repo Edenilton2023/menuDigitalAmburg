@@ -1968,6 +1968,10 @@ video {
   background-image: url('/assets/bg.png');
 }
 
+.bg-home2 {
+  background-image: url('/assets/capa.png');
+}
+
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
