@@ -15,7 +15,7 @@ const codCart = document.querySelector('#cod-cart');
 const observacao = document.querySelector('#obs');
 const addresWarn = document.querySelector('#dados-errado');
 
-console.log(observacao);
+
 
 let cart = [];
 // abrir modal do carrinha
@@ -152,15 +152,23 @@ checkoutBtn.addEventListener('click', () => {
 
     return;
   }
+
+
   const cartItems = cart.map((item) => {
     return (
       `${item.name},  qtd:${item.quantity},   Cod: ${item.cod}     preço: ${item.price},|        ` 
     );
   }).join('');
-  const menssage = encodeURIComponent(cartItems)
-  const phone = '7199996810'
-  window.open(`https://wa.me/${phone}?text$={message} Endereço :${codCart.value}`, "-blank");
+  const message = encodeURIComponent(cartItems)
+  console.log(message);
   
+  const phone = '7199996810'
+  window.open(
+    `https://wa.me/${phone}?text=${message} Comada: ${codCart.value}   Mesa:${mesa.value}  Observação: ${observacao.value}`,
+    '_black'
+  );
+  cart =[]
+  updateCartModal()
 });
 
 // const spanItem = document.getElementById('data-span');
