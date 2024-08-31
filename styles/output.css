@@ -801,10 +801,6 @@ video {
   margin-top: 18rem;
 }
 
-.mt-80 {
-  margin-top: 20rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -960,8 +956,8 @@ video {
   max-width: 80rem;
 }
 
-.max-w-lg {
-  max-width: 32rem;
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-shrink {
@@ -2677,6 +2673,10 @@ video {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
 }
 
 .duration-200 {
