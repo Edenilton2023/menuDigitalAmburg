@@ -171,14 +171,74 @@ checkoutBtn.addEventListener('click', () => {
   updateCartModal()
 });
 
-// const spanItem = document.getElementById('data-span');
-// const IsOpem = checkRestantOpem();
-// if (IsOpem) {
-//   spanItem.classList.remove('bg-red-500');
-//   spanItem.classList.add('bg-green-600');
-// } else {
-//   spanItem.classList.add('bg-red-500');
-//   spanItem.classList.remove('bg-green-600');
-// }
- /// enviar para o zap
 
+
+//CARROCEL
+
+//1. Selecionando o carrossel e os slides
+   const carousel = document.querySelector('#carousel .flex');
+ 
+   
+   const slides = document.querySelectorAll('#carousel .min-w-full');
+
+   //2. Mantendo o controle de onde estamos
+   let currentIndex = 0;
+
+
+   //3. Avançando para o próximo slide
+   document.getElementById('next').addEventListener('click', () => {
+     currentIndex = (currentIndex + 1) % slides.length;
+     updateCarousel();
+        scrollToSection(currentIndex);
+   });
+//4. Voltando para o slide anterior
+   document.getElementById('prev').addEventListener('click', () => {
+     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+     updateCarousel();
+     scrollToSection(currentIndex);
+   });
+
+//5. Atualizando o carrossel (movendo a fita)
+   function updateCarousel() {
+     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+   }
+   // Função para rolar até a seção correspondente
+function scrollToSection(index) {
+    const secoes = document.querySelectorAll('.hscreen');
+    const secaoAlvo = secoes[index];
+    
+    // Rola suavemente até a seção correspondente
+    secaoAlvo.scrollIntoView({ behavior: 'smooth' });
+}
+    
+  // MOVENDO O CARROCEL COM SCROLL
+
+
+// Adiciona um evento de scroll na janela
+window.addEventListener('scroll', () => {
+    // Seleciona todas as seções que têm a classe .hscreen
+    const secoes = document.querySelectorAll('.hscreen');
+
+    // Itera sobre cada seção
+    secoes.forEach((item, index) => {
+        // Pega a distância da seção até o topo da janela de visualização
+        const altura = item.getBoundingClientRect().top;
+        const alturarebaixada = altura -240 
+
+
+        // Verifica se a seção atingiu o topo da janela de visualização
+        if (alturarebaixada <= 0 && alturarebaixada > -item.offsetHeight / 2) {
+          // Atualiza o carrossel para o próximo slide
+          currentIndex = index % slides.length;
+          updateCarousel();
+        }
+    });
+});
+
+function updateCarousel() {
+    const carousel = document.querySelector('#carousel .flex');
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+
+   
