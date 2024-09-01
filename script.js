@@ -155,9 +155,7 @@ checkoutBtn.addEventListener('click', () => {
 
 
   const cartItems = cart.map((item) => {
-    return (
-      `${item.name},  qtd:${item.quantity},   Cod: ${item.cod}     preço: ${item.price},|        ` 
-    );
+    return `${item.name},  <strong>Quant:</strong>${item.quantity},   <strong>Codi:</strong>  ${item.cod}   <strong>PreçoR$:</strong>    ${item.price},|        `;
   }).join('');
   const message = encodeURIComponent(cartItems)
   console.log(message);
@@ -181,36 +179,75 @@ checkoutBtn.addEventListener('click', () => {
    
    const slides = document.querySelectorAll('#carousel .min-w-full');
 
+
+
    //2. Mantendo o controle de onde estamos
-   let currentIndex = 0;
+  let currentIndex = 0;
+  /* 
+  currentIndex: Uma variável que rastreia o slide atual sendo exibido. Começa em 0, que corresponde ao primeiro slide. */
+ 
 
 
    //3. Avançando para o próximo slide
-   document.getElementById('next').addEventListener('click', () => {
+   document.getElementById('next').addEventListener('click', () => {  
      currentIndex = (currentIndex + 1) % slides.length;
+     console.log(currentIndex);
      updateCarousel();
         scrollToSection(currentIndex);
    });
+   /* 
+   Evento de clique: Um ouvinte de evento é adicionado ao botão de próximo (next). Quando clicado, o currentIndex é incrementado, e se ele ultrapassar o último slide, volta para o primeiro.
+   updateCarousel(): Chama a função que move o  carrossel para o próximo slide.
+   scrollToSection(currentIndex): Faz o scroll suave para a seção correspondente ao slide atual. */
+   
+
+
+
+
 //4. Voltando para o slide anterior
    document.getElementById('prev').addEventListener('click', () => {
      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
      updateCarousel();
      scrollToSection(currentIndex);
    });
+   /*
+    Evento de clique : Um ovinte de envento è adicionado ao botão de proximo (prev). quando clicado , o 'currentIndex'  é incrementado , e se ele ultrapassa o última slide , volta para o íltimoslide  
+
+  `   updateCarousel()` Chama a funçao que move o carrocel para O proximo slide 
+  `  scrollToection(currentIndex)`: faz o scroll suave para a seção correspondente ao slide atual 
+     */
 
 //5. Atualizando o carrossel (movendo a fita)
    function updateCarousel() {
      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
    }
-   // Função para rolar até a seção correspondente
+   /*
+   updateCarousel(): Esta função move o carrossel para o slide correspondente ao currentIndex. Cada slide parece ocupar 100% da largura, então o carrossel é movido em incrementos de 100%.
+   
+    */
+ 
+
+    // Rola suavemente até a seção correspondente
+
 function scrollToSection(index) {
     const secoes = document.querySelectorAll('.hscreen');
     const secaoAlvo = secoes[index];
-    
-    // Rola suavemente até a seção correspondente
     secaoAlvo.scrollIntoView({ behavior: 'smooth' });
 }
+/* 
+` scrollToSection()`: esta funçao roal suavemente a pagina até a seçao correspomdente ao indice atual. ele encontra a seção desejada com base na lista de todas as seções (`.hscreen`)*/
     
+//DEBUGANDO
+/*
+Debugando:
+Agora que temos uma visão geral, se algo não estiver funcionando como esperado, aqui estão alguns passos para debugar:
+
+Verifique os Seletores: Certifique-se de que #carousel .flex, #carousel .min-w-full, #next, #prev, e .hscreen correspondem exatamente ao que está no HTML.
+
+Console Logs: Use console.log() em pontos críticos, como antes e depois de atualizar currentIndex ou dentro de updateCarousel para ver os valores intermediários.
+
+CSS: Verifique se as classes como flex, min-w-full, e .hscreen estão aplicadas corretamente e que não há estilos conflitantes. */
+
   // MOVENDO O CARROCEL COM SCROLL
 
 
