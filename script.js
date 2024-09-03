@@ -1,7 +1,5 @@
 const header = document.querySelector('header');
 
-
-
 const menu = document.querySelector('#menu');
 const cartBtn = document.querySelector('#cart-btn');
 const cartModal = document.querySelector('#cart-modal');
@@ -14,8 +12,6 @@ const mesa = document.querySelector('#mesa');
 const codCart = document.querySelector('#cod-cart');
 const observacao = document.querySelector('#obs');
 const addresWarn = document.querySelector('#dados-errado');
-
-
 
 let cart = [];
 // abrir modal do carrinha
@@ -36,9 +32,13 @@ closeModalBtn.addEventListener('click', () => {
 // obs.. a clasest(filho) me retoena o pai
 menu.addEventListener('click', (event) => {
   let parentButton = event.target.closest('.add-to-cart-btn');
+
   if (parentButton) {
     const name = parentButton.getAttribute('data-name');
-    const price = parseFloat(parentButton.getAttribute('data-price'));
+    
+    let price = parseFloat(parentButton.getAttribute('data-price'));
+    
+
     const cod = parentButton.getAttribute('data-cod');
     //console.log(name,price,cod);
     addTocart(name, price, cod);
@@ -81,15 +81,15 @@ function updateCartModal() {
 
         <div>
         <P class= 'font-bold'> ${item.name}</P>
-        <P>Qtd : (${item.quantity}) </P>
-        <P> (${item.cod})</P>
+        <P>Qtd:  (${item.quantity}) </P>
+        <P> Codi:(${item.cod})</P>
        
-        <P class= 'font-medium mt-2' >R$${item.price.toFixed(2)}</P>
+        <P class= 'font-medium mt-2' >R$ : ${item.price.toFixed(2)}</P>
         </div>
         <button class = ' mr-2 remove-from-cart-btn  px-6  py-4  flex items-center rounded-s-full' data-name="${
           item.name
         }">Excruir
-   
+ 
          
         </button>
        </div>
@@ -153,64 +153,57 @@ checkoutBtn.addEventListener('click', () => {
     return;
   }
 
+  //ZAP ENVIAR
+  const cartItems = cart
+    .map((item) => {
+      return `${item.name}, Quant:${item.quantity},  Cod:${item.cod}          
+`;
+    })
+    .join('');
+  const message = encodeURIComponent(cartItems);
 
-  const cartItems = cart.map((item) => {
-    return `${item.name},  <strong>Quant:</strong>${item.quantity},   <strong>Codi:</strong>  ${item.cod}   <strong>PreçoR$:</strong>    ${item.price},|        `;
-  }).join('');
-  const message = encodeURIComponent(cartItems)
-  console.log(message);
-  
-  const phone = '7199996810'
+
+  const phone = '7199996810';
   window.open(
-    `https://wa.me/${phone}?text=${message} Comada: ${codCart.value}   Mesa:${mesa.value}  Observação: ${observacao.value}`,
+    `https://wa.me/${phone}?text=${message} Comada:${codCart.value}   Mesa:${mesa.value} 
+     Observação: ${observacao.value}, `,
     '_black'
   );
-  cart =[]
-  updateCartModal()
+  cart = [];
+  updateCartModal();
 });
-
-
 
 //CARROCEL
 
 //1. Selecionando o carrossel e os slides
-   const carousel = document.querySelector('#carousel .flex');
- 
-   
-   const slides = document.querySelectorAll('#carousel .min-w-full');
+const carousel = document.querySelector('#carousel .flex');
 
+const slides = document.querySelectorAll('#carousel .min-w-full');
 
-
-   //2. Mantendo o controle de onde estamos
-  let currentIndex = 0;
-  /* 
+//2. Mantendo o controle de onde estamos
+let currentIndex = 0;
+/* 
   currentIndex: Uma variável que rastreia o slide atual sendo exibido. Começa em 0, que corresponde ao primeiro slide. */
+
+//3. Avançando para o próximo slide
+document.getElementById('next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
  
-
-
-   //3. Avançando para o próximo slide
-   document.getElementById('next').addEventListener('click', () => {  
-     currentIndex = (currentIndex + 1) % slides.length;
-     console.log(currentIndex);
-     updateCarousel();
-        scrollToSection(currentIndex);
-   });
-   /* 
+  updateCarousel();
+  scrollToSection(currentIndex);
+});
+/* 
    Evento de clique: Um ouvinte de evento é adicionado ao botão de próximo (next). Quando clicado, o currentIndex é incrementado, e se ele ultrapassar o último slide, volta para o primeiro.
    updateCarousel(): Chama a função que move o  carrossel para o próximo slide.
    scrollToSection(currentIndex): Faz o scroll suave para a seção correspondente ao slide atual. */
-   
-
-
-
 
 //4. Voltando para o slide anterior
-   document.getElementById('prev').addEventListener('click', () => {
-     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-     updateCarousel();
-     scrollToSection(currentIndex);
-   });
-   /*
+document.getElementById('prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+  scrollToSection(currentIndex);
+});
+/*
     Evento de clique : Um ovinte de envento è adicionado ao botão de proximo (prev). quando clicado , o 'currentIndex'  é incrementado , e se ele ultrapassa o última slide , volta para o íltimoslide  
 
   `   updateCarousel()` Chama a funçao que move o carrocel para O proximo slide 
@@ -218,25 +211,24 @@ checkoutBtn.addEventListener('click', () => {
      */
 
 //5. Atualizando o carrossel (movendo a fita)
-   function updateCarousel() {
-     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-   }
-   /*
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+/*
    updateCarousel(): Esta função move o carrossel para o slide correspondente ao currentIndex. Cada slide parece ocupar 100% da largura, então o carrossel é movido em incrementos de 100%.
    
     */
- 
 
-    // Rola suavemente até a seção correspondente
+// Rola suavemente até a seção correspondente
 
 function scrollToSection(index) {
-    const secoes = document.querySelectorAll('.hscreen');
-    const secaoAlvo = secoes[index];
-    secaoAlvo.scrollIntoView({ behavior: 'smooth' });
+  const secoes = document.querySelectorAll('.hscreen');
+  const secaoAlvo = secoes[index];
+  secaoAlvo.scrollIntoView({ behavior: 'smooth' });
 }
 /* 
 ` scrollToSection()`: esta funçao roal suavemente a pagina até a seçao correspomdente ao indice atual. ele encontra a seção desejada com base na lista de todas as seções (`.hscreen`)*/
-    
+
 //DEBUGANDO
 /*
 Debugando:
@@ -248,34 +240,29 @@ Console Logs: Use console.log() em pontos críticos, como antes e depois de atua
 
 CSS: Verifique se as classes como flex, min-w-full, e .hscreen estão aplicadas corretamente e que não há estilos conflitantes. */
 
-  // MOVENDO O CARROCEL COM SCROLL
-
+// MOVENDO O CARROCEL COM SCROLL
 
 // Adiciona um evento de scroll na janela
 window.addEventListener('scroll', () => {
-    // Seleciona todas as seções que têm a classe .hscreen
-    const secoes = document.querySelectorAll('.hscreen');
+  // Seleciona todas as seções que têm a classe .hscreen
+  const secoes = document.querySelectorAll('.hscreen');
 
-    // Itera sobre cada seção
-    secoes.forEach((item, index) => {
-        // Pega a distância da seção até o topo da janela de visualização
-        const altura = item.getBoundingClientRect().top;
-        const alturarebaixada = altura -240 
+  // Itera sobre cada seção
+  secoes.forEach((item, index) => {
+    // Pega a distância da seção até o topo da janela de visualização
+    const altura = item.getBoundingClientRect().top;
+    const alturarebaixada = altura - 240;
 
-
-        // Verifica se a seção atingiu o topo da janela de visualização
-        if (alturarebaixada <= 0 && alturarebaixada > -item.offsetHeight / 2) {
-          // Atualiza o carrossel para o próximo slide
-          currentIndex = index % slides.length;
-          updateCarousel();
-        }
-    });
+    // Verifica se a seção atingiu o topo da janela de visualização
+    if (alturarebaixada <= 0 && alturarebaixada > -item.offsetHeight / 2) {
+      // Atualiza o carrossel para o próximo slide
+      currentIndex = index % slides.length;
+      updateCarousel();
+    }
+  });
 });
 
 function updateCarousel() {
-    const carousel = document.querySelector('#carousel .flex');
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  const carousel = document.querySelector('#carousel .flex');
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
-
-
-   
