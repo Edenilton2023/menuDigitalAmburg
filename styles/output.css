@@ -948,6 +948,14 @@ video {
   width: 100%;
 }
 
+.w-\[6px\] {
+  width: 6px;
+}
+
+.w-\[615px\] {
+  width: 615px;
+}
+
 .min-w-\[90\%\] {
   min-width: 90%;
 }
