@@ -212,7 +212,7 @@ document.getElementById('prev').addEventListener('click', () => {
 
 //5. Atualizando o carrossel (movendo a fita)
 function updateCarousel() {
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  carousel.style.transform = `translateX(-${currentIndex * 12.5}%)`;
 }
 /*
    updateCarousel(): Esta função move o carrossel para o slide correspondente ao currentIndex. Cada slide parece ocupar 100% da largura, então o carrossel é movido em incrementos de 100%.
