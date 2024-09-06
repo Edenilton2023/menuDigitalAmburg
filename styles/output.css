@@ -928,8 +928,8 @@ video {
   width: 8rem;
 }
 
-.w-\[640px\] {
-  width: 640px;
+.w-\[615px\] {
+  width: 615px;
 }
 
 .w-\[this-is\\\\\] {
@@ -948,12 +948,8 @@ video {
   width: 100%;
 }
 
-.w-\[6px\] {
-  width: 6px;
-}
-
-.w-\[615px\] {
-  width: 615px;
+.w-\[415px\] {
+  width: 415px;
 }
 
 .min-w-\[90\%\] {
@@ -2202,6 +2198,22 @@ video {
 
 .pr-48 {
   padding-right: 12rem;
+}
+
+.pr-44 {
+  padding-right: 11rem;
+}
+
+.pr-40 {
+  padding-right: 10rem;
+}
+
+.pr-36 {
+  padding-right: 9rem;
+}
+
+.pr-32 {
+  padding-right: 8rem;
 }
 
 .text-left {
