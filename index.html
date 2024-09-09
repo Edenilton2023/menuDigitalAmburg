@@ -69,101 +69,178 @@
     
         <!--fim header -->
    
-    <!-- inicio menu -->
-    <div id="menu">
-      <main
-        class=" grid grid-cols-1 md:grid-cols-1 gap-4 mx-auto w-full px-3 mb-16  "
-      >
+<!-- inicio menu -->
+<div id="menu">
+  <main class="grid grid-cols-1 md:grid-cols-1 gap-4 mx-auto w-full px-3 mb-16">
+    <section id="section1" class="hscreen content-section grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto mb-16 mt-96">
+      <!-- adicionando item real -->
+      <div class="flex gap-2 bg-slate-50">
+        <img
+          src="./assets/fucushima.png"
+          alt="foto do item"
+          class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6 duration-200 bg-black bg-opacity-80"
+        />
+
+        <div class="flex justify-between w-full">
+          <div class="flex-col">
+            <div class="flex items-center flex-wrap space-x-1">
+              <p class="font-medium">FUKUSHIMA</p>
+              <p class="text-xs font-light"> (10 peças)</p>
+            </div>
+            <p class="text-xs font-extralight">
+              05 hot shake couve e <br />05 sashimis selados com shimeji
+            </p>
+          </div>
+
+          <div class="h-auto flex flex-col items-center justify-between mt-1">
+            <p class="flex-nowrap font-medium text-xs min-w-16 px-1">R$ 73,90</p>
+            <button
+              class="bg-gray-900 px-2 rounded add-to-cart-btn h-7 mb-3"
+              data-name="SELECT"
+              data-price="79,30"
+              data-cod="200"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
       
-<section id="section1" class= "hscreen content-section  grid ms: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto  mb-16 mt-96">
- <!-- adicionando item real -->
-   <!--  REPETIR ESSE FOMATO PRA TODOS    -->
+          <div class="flex gap-2 bg-slate-50">
+        <img
+          src="./assets/kanagawua.png"
+          alt="foto do item"
+          class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6 duration-200 bg-black bg-opacity-80"
+        />
 
-<div>
-  <div class="flex gap-2 bg-slate-50 ">
-<img
-src="./assets/fucushima.png"
-alt="foto do item "
-class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6  duration-200 bg-black bg-opacity-80"
+        <div class="flex justify-between w-full">
+          <div class="flex-col">
+            <div class="flex items-center flex-wrap space-x-1">
+              <p class="font-medium"> KANAGAWA</p>
+              <p class="text-xs font-light"> (10 peças)</p>
+            </div>
+            <p class="text-xs font-extralight">
+              05 Niguiri variados  e<br> 05 Sashimis de salmão
+            </p>
+          </div>
 
-/>
-<div class="flex justify-between w-full">
+          <div class="h-auto flex flex-col items-center justify-between mt-1">
+            <p class="flex-nowrap font-medium text-xs min-w-16 px-1">R$ 62,90</p>
+            <button
+              class="bg-gray-900 px-2 rounded add-to-cart-btn h-7 mb-3"
+              data-name="KANAGAWA"
+              data-price="62,30"
+              data-cod="186"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-<div class="flex-col ">
-<div class="flex items-center flex-wrap space-x-1">
-  <p class="font-medium">FUKUSHIMA</p>
-<p class="text-xs font-light "> (10 peças)</p> 
-</div>
-<p class="text-xs font-extralight">
-05 hot shake couve e <br>05 sashimis selados com shimeji
-</p>
-</div>
+      <!-- ==== Copiando o item novamente ==== -->
+      <div class="flex gap-2 bg-slate-50">
+        <img
+          src="./assets/ebiShake.png"
+          alt="foto do item"
+          class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6 duration-200 bg-black bg-opacity-80"
+        />
 
-<div class=" h-auto flex  flex-col items-center justify-between mt-1">
-<p class=" flex-nowrap font-medium text-xs  min-w-16 px-1">R$ 73,90</p>
-<button 
-class="bg-gray-900 px-2 rounded add-to-cart-btn h-7   mb-3 "
-data-name=" SELECT"
-data-price="79,30"
-data-cod="200"
->
-<i class=" fa fa-cart-plus text-lg text-white "></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-<div>
+        <div class="flex justify-between w-full">
+          <div class="flex-col">
+            <div class="flex items-center flex-wrap space-x-1">
+              <p class="font-medium"> EBI SHAKE</p>
+              <p class="text-xs font-light"> (10 peças)</p>
+            </div>
+            <p class="text-xs font-extralight">
+              05 Ebi shake  e<br> 05 Sho-ya maki
+            </p>
+          </div>
 
+          <div class="h-auto flex flex-col items-center justify-between mt-1">
+            <p class="flex-nowrap font-medium text-xs min-w-16 px-1">R$ 70,90</p>
+            <button
+              class="bg-gray-900 px-2 rounded add-to-cart-btn h-7 mb-3"
+              data-name=" EBI SHAKE"
+              data-price="70,90"
+              data-cod="262"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+         <!-- ==== Copiando o item ==== -->
+      <div class="flex gap-2 bg-slate-50">
+        <img
+          src="./assets/fucushima.png"
+          alt="foto do item"
+          class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6 duration-200 bg-black bg-opacity-80"
+        />
 
-</div>
-  <div class="flex gap-2 bg-slate-50 ">
-<img
-src="./assets/fucushima.png"
-alt="foto do item "
-class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6  duration-200 bg-black bg-opacity-80"
+        <div class="flex justify-between w-full">
+          <div class="flex-col">
+            <div class="flex items-center flex-wrap space-x-1">
+              <p class="font-medium">FUKUSHIMA</p>
+              <p class="text-xs font-light"> (10 peças)</p>
+            </div>
+            <p class="text-xs font-extralight">
+              05 hot shake couve e <br />05 sashimis selados com shimeji
+            </p>
+          </div>
 
-/>
-<div class="flex justify-between w-full">
+          <div class="h-auto flex flex-col items-center justify-between mt-1">
+            <p class="flex-nowrap font-medium text-xs min-w-16 px-1">R$ 73,90</p>
+            <button
+              class="bg-gray-900 px-2 rounded add-to-cart-btn h-7 mb-3"
+              data-name="SELECT"
+              data-price="79,30"
+              data-cod="200"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-<div class="flex-col ">
-<div class="flex items-center flex-wrap space-x-1">
-  <p class="font-medium">FUKUSHIMA</p>
-<p class="text-xs font-light "> (10 peças)</p> 
-</div>
-<p class="text-xs font-extralight">
-05 hot shake couve e <br>05 sashimis selados com shimeji
-</p>
-</div>
+      <!-- ==== Copiando o item novamente ==== -->
+      <div class="flex gap-2 bg-slate-50">
+        <img
+          src="./assets/fucushima.png"
+          alt="foto do item"
+          class="w-32 h-32 rounded-md hover:scale-150 hover:rotate-6 duration-200 bg-black bg-opacity-80"
+        />
 
-<div class=" h-auto flex  flex-col items-center justify-between mt-1">
-<p class=" flex-nowrap font-medium text-xs  min-w-16 px-1">R$ 73,90</p>
-<button 
-class="bg-gray-900 px-2 rounded add-to-cart-btn h-7   mb-3"
-data-name=" SELECT"
-data-price="79,30"
-data-cod="200"
->
-<i class=" fa fa-cart-plus text-lg text-white "></i>
-</button>
-</div>
-</div>
-</div>
+        <div class="flex justify-between w-full">
+          <div class="flex-col">
+            <div class="flex items-center flex-wrap space-x-1">
+              <p class="font-medium">FUKUSHIMA</p>
+              <p class="text-xs font-light"> (10 peças)</p>
+            </div>
+            <p class="text-xs font-extralight">
+              05 hot shake couve e <br />05 sashimis selados com shimeji
+            </p>
+          </div>
+
+          <div class="h-auto flex flex-col items-center justify-between mt-1">
+            <p class="flex-nowrap font-medium text-xs min-w-16 px-1">R$ 73,90</p>
+            <button
+              class="bg-gray-900 px-2 rounded add-to-cart-btn h-7 mb-3"
+              data-name="SELECT"
+              data-price="79,30"
+              data-cod="200"
+            >
+              <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
   
 
-
-
-
- 
-
-
-
-
-
-</div>
-</section>
-
+  
 
 
 <!-- backup de segurança -->
@@ -775,16 +852,9 @@ data-cod="823"
 </div>
 </div> -->
 
-</section>
+       
 
 
-
-
-
-        
-
-      </main>
-    </div>
 
     
     
