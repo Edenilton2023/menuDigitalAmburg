@@ -1,6 +1,7 @@
 const header = document.querySelector('header');
 
 const menu = document.querySelector('#menu');
+
 const cartBtn = document.querySelector('#cart-btn');
 const cartModal = document.querySelector('#cart-modal');
 const cartItemsContainer = document.querySelector('#cart-items');
@@ -27,22 +28,31 @@ cartModal.addEventListener('click', (event) => {
 closeModalBtn.addEventListener('click', () => {
   cartModal.style.display = 'none';
 });
+// ======
+const btnnCart = document.querySelectorAll('.add-to-cart-btn');
+btnnCart.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    let parentButton = event.target.closest('.add-to-cart-btn');
 
+    if (parentButton) {
+      const name = parentButton.getAttribute('data-name');
+
+      let price = parseFloat(parentButton.getAttribute('data-price'));
+
+      const cod = parentButton.getAttribute('data-cod');
+      //console.log(name,price,cod);
+      addTocart(name, price, cod);
+    }
+  });
+});
+
+// =======
 //pegar o botao do carrinho
 // obs.. a clasest(filho) me retoena o pai
+
 menu.addEventListener('click', (event) => {
-  let parentButton = event.target.closest('.add-to-cart-btn');
-
-  if (parentButton) {
-    const name = parentButton.getAttribute('data-name');
-    
-    let price = parseFloat(parentButton.getAttribute('data-price'));
-    
-
-    const cod = parentButton.getAttribute('data-cod');
-    //console.log(name,price,cod);
-    addTocart(name, price, cod);
-  }
+  // let parentButton = event.currentTarget;
+  // console.log(event.target.closest('.add-to-cart-btn'));
 });
 
 // funçao para adicionar no carrinho
@@ -88,8 +98,9 @@ function updateCartModal() {
         </div>
         <button class = ' mr-2 remove-from-cart-btn  px-6  py-4  flex items-center rounded-s-full' data-name="${
           item.name
-        }">Excruir
- 
+        }"><span class="material-symbols-outlined -z-0  p-0 m-0">
+remove_shopping_cart
+</span>
          
         </button>
        </div>
@@ -104,7 +115,6 @@ function updateCartModal() {
   });
 
   cartCount.innerHTML = cart.length;
-  console.log(cart.length);
 }
 //funçao para remover o item d carrinho
 cartItemsContainer.addEventListener('click', (event) => {
@@ -162,7 +172,6 @@ checkoutBtn.addEventListener('click', () => {
     .join('');
   const message = encodeURIComponent(cartItems);
 
-
   const phone = '7199996810';
   window.open(
     `https://wa.me/${phone}?text=${message} Comada:${codCart.value}   Mesa:${mesa.value} 
@@ -188,7 +197,7 @@ let currentIndex = 0;
 //3. Avançando para o próximo slide
 document.getElementById('next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % slides.length;
- 
+
   updateCarousel();
   scrollToSection(currentIndex);
 });
@@ -243,6 +252,9 @@ CSS: Verifique se as classes como flex, min-w-full, e .hscreen estão aplicadas 
 // MOVENDO O CARROCEL COM SCROLL
 
 // Adiciona um evento de scroll na janela
+
+let ticking = false;
+
 window.addEventListener('scroll', () => {
   // Seleciona todas as seções que têm a classe .hscreen
   const secoes = document.querySelectorAll('.hscreen');

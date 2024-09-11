@@ -709,6 +709,10 @@ video {
   z-index: 99;
 }
 
+.-z-0 {
+  z-index: 0;
+}
+
 .float-start {
   float: inline-start;
 }
@@ -940,10 +944,6 @@ video {
 
 .w-32 {
   width: 8rem;
-}
-
-.w-\[24rem\] {
-  width: 24rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -2167,6 +2167,10 @@ video {
   padding: 1.25rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2200,11 +2204,6 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .py-3 {
@@ -2280,11 +2279,6 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-sm {
