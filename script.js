@@ -37,7 +37,10 @@ btnnCart.forEach((item) => {
     if (parentButton) {
       const name = parentButton.getAttribute('data-name');
 
-      let price = parseFloat(parentButton.getAttribute('data-price'));
+      let price = parseFloat(
+        parentButton.getAttribute('data-price').replace(',', '.')
+      );
+      price = parseFloat(price).toFixed(2);
 
       const cod = parentButton.getAttribute('data-cod');
       //console.log(name,price,cod);
@@ -87,24 +90,24 @@ function updateCartModal() {
     );
     cartItemElemet.innerHTML = `
 
-        <div class="flex items-center justify-between px-1">
+        <div class="flex items-center justify-between px-1 z-[40]">
 
         <div>
         <P class= 'font-bold'> ${item.name}</P>
         <P>Qtd:  (${item.quantity}) </P>
         <P> Codi:(${item.cod})</P>
        
-        <P class= 'font-medium mt-2' >R$ : ${item.price.toFixed(2)}</P>
+        <P class= 'font-medium mt-2' >R$ : ${item.price}</P>
+      
         </div>
-        <button class = ' mr-2 remove-from-cart-btn  px-6  py-4  flex items-center rounded-s-full' data-name="${
-          item.name
-        }"><span class="material-symbols-outlined -z-0  p-0 m-0">
-remove_shopping_cart
-</span>
+        <button class = ' mr-2 remove-from-cart-btn  px-6  py-4  flex items-center rounded-s-full' data-name="${item.name}"><span class="material-symbols-outlined -z-0  p-0 m-0">
+           remove_shopping_cart
+          </span>
          
         </button>
        </div>
         `;
+
     total += item.price * item.quantity;
     // cooquei a estrurura aciam criada via js dentro do modal
     cartItemsContainer.appendChild(cartItemElemet);
