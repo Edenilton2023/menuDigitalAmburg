@@ -819,10 +819,6 @@ video {
   margin-top: 1rem;
 }
 
-.mt-96 {
-  margin-top: 24rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -960,6 +956,10 @@ video {
 
 .w-\[30\%\] {
   width: 30%;
+}
+
+.w-\[800px\] {
+  width: 800px;
 }
 
 .w-\[this-is\\\\\] {
@@ -2288,6 +2288,10 @@ video {
   vertical-align: super;
 }
 
+.font-gyosho {
+  font-family: Gyosho, sans-serif;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2296,6 +2300,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-xs {
@@ -2804,6 +2813,16 @@ video {
 
 .forced-color-adjust-none {
   forced-color-adjust: none;
+}
+
+/* Importando a fonte Gyosho */
+
+@font-face {
+  font-family: 'Gyosho';
+
+  src: url('/fonts/Gyosho.ttf') format('truetype');
+
+  /* Certifique-se de que o caminho está correto */
 }
 
 @media (min-width: 640px) {

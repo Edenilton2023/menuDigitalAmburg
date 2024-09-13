@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
+      gyosho: ['Gyosho', 'sans-serif'],
     },
     extend: {
       backgroundImage: {
@@ -15,4 +16,3 @@ module.exports = {
   },
   plugins: [],
 };
-
