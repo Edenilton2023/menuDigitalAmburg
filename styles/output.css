@@ -819,6 +819,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-96 {
+  margin-top: 24rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -956,10 +960,6 @@ video {
 
 .w-\[30\%\] {
   width: 30%;
-}
-
-.w-\[800px\] {
-  width: 800px;
 }
 
 .w-\[this-is\\\\\] {
@@ -2307,6 +2307,11 @@ video {
   line-height: 2.5rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -2330,6 +2335,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .uppercase {

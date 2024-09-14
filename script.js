@@ -169,7 +169,7 @@ checkoutBtn.addEventListener('click', () => {
   //ZAP ENVIAR
   const cartItems = cart
     .map((item) => {
-      return `${item.name}, Quant:${item.quantity},  Cod:${item.cod}          
+      return `${item.name}, Quant:${item.quantity},  Cod:${item.cod}      /    
 `;
     })
     .join('');
@@ -177,7 +177,7 @@ checkoutBtn.addEventListener('click', () => {
 
   const phone = '7199996810';
   window.open(
-    `https://wa.me/${phone}?text=${message} Comada:${codCart.value}   Mesa:${mesa.value} 
+    `https://wa.me/${phone}?text=${message} => Comada:${codCart.value}   Mesa:${mesa.value} 
      Observação: ${observacao.value}, `,
     '_black'
   );
@@ -266,7 +266,7 @@ window.addEventListener('scroll', () => {
   secoes.forEach((item, index) => {
     // Pega a distância da seção até o topo da janela de visualização
     const altura = item.getBoundingClientRect().top;
-    const alturarebaixada = altura - 240;
+    const alturarebaixada = altura - 350;
 
     // Verifica se a seção atingiu o topo da janela de visualização
     if (alturarebaixada <= 0 && alturarebaixada > -item.offsetHeight / 2) {
