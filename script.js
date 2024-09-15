@@ -266,10 +266,13 @@ window.addEventListener('scroll', () => {
   secoes.forEach((item, index) => {
     // Pega a distância da seção até o topo da janela de visualização
     const altura = item.getBoundingClientRect().top;
-    const alturarebaixada = altura - 350;
 
-    // Verifica se a seção atingiu o topo da janela de visualização
-    if (alturarebaixada <= 0 && alturarebaixada > -item.offsetHeight / 2) {
+    // Verifica se o topo da seção está aproximadamente no meio da tela
+    const meioDaTela = window.innerHeight / 2;
+    const inicioNoMeio =
+      altura <= meioDaTela && altura > meioDaTela - item.offsetHeight;
+
+    if (inicioNoMeio) {
       // Atualiza o carrossel para o próximo slide
       currentIndex = index % slides.length;
       updateCarousel();
