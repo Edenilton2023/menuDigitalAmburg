@@ -14,6 +14,15 @@
 /* Importando a fonte Gyosho */
 @font-face {
     font-family: 'Gyosho';
-    src: url('/fonts/Gyosho.ttf') format('truetype');
+    src: url('/fonts/Gyosho.ttf') format('truetype'),
     /* Certifique-se de que o caminho está correto */
+
+url('/fonts/gyosho.woff') format('woff');
+
+
+    font-weight: normal;
+
+
+    font-style: normal;
+
 }

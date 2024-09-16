@@ -946,10 +946,6 @@ video {
   height: 100%;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
 .w-16 {
   width: 4rem;
 }
@@ -980,14 +976,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-20 {
-  width: 5rem;
 }
 
 .min-w-16 {
@@ -2841,9 +2829,14 @@ video {
 @font-face {
   font-family: 'Gyosho';
 
-  src: url('/fonts/Gyosho.ttf') format('truetype');
+  src: url('/fonts/Gyosho.ttf') format('truetype'),
+    /* Certifique-se de que o caminho está correto */
 
-  /* Certifique-se de que o caminho está correto */
+url('/fonts/gyosho.woff') format('woff');
+
+  font-weight: normal;
+
+  font-style: normal;
 }
 
 @media (min-width: 640px) {
