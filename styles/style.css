@@ -17,7 +17,7 @@
     src: url('/fonts/Gyosho.ttf') format('truetype'),
     /* Certifique-se de que o caminho está correto */
 
-url('/fonts/gyosho.woff') format('woff');
+url('/fonts/gyosho.ttf') format('ttf');
 
 
     font-weight: normal;
