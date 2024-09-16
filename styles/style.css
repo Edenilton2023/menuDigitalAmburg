@@ -14,10 +14,10 @@
 /* Importando a fonte Gyosho */
 @font-face {
     font-family: 'Gyosho';
-    src: url('shoya/fonts/Gyosho.ttf') format('truetype'),
+    src: url('https: //edenilton2023.github.io/shoya/fonts/Gyosho.ttf') format('ttf'),
     /* Certifique-se de que o caminho está correto */
 
-url('shoya/fonts/Gyosho.ttf') format('ttf');
+url('https: //edenilton2023.github.io/shoya/fonts/Gyosho.ttf') format('truetype');
 
 
     font-weight: normal;
