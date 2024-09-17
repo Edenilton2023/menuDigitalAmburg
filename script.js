@@ -236,7 +236,15 @@ function updateCarousel() {
 function scrollToSection(index) {
   const secoes = document.querySelectorAll('.hscreen');
   const secaoAlvo = secoes[index];
-  secaoAlvo.scrollIntoView({ behavior: 'smooth' });
+  const offset = 330; // Ajuste a distância do topo aqui
+
+  const posicaoSecao =
+    secaoAlvo.getBoundingClientRect().top + window.pageYOffset - offset;
+
+  window.scrollTo({
+    top: posicaoSecao,
+    behavior: 'smooth',
+  });
 }
 /* 
 ` scrollToSection()`: esta funçao roal suavemente a pagina até a seçao correspomdente ao indice atual. ele encontra a seção desejada com base na lista de todas as seções (`.hscreen`)*/
