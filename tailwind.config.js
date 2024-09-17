@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
-      gyosho: ['Gyosho', 'sans-serif'],
+      gyosho: ['Gyosho', 'sans-serif'], // Mudança para "gyosho" em minúsculas
     },
     extend: {
       backgroundImage: {

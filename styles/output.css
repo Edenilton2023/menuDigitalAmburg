@@ -2288,6 +2288,10 @@ video {
   vertical-align: super;
 }
 
+.font-gyosho {
+  font-family: Gyosho, sans-serif;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2825,10 +2829,9 @@ video {
 @font-face {
   font-family: 'Gyosho';
 
-  src: url('https: //edenilton2023.github.io/shoya/fonts/Gyosho.ttf') format('ttf'),
-    /* Certifique-se de que o caminho está correto */
+  /* Certifique-se de que o caminho está correto */
 
-url('https: //edenilton2023.github.io/shoya/fonts/Gyosho.ttf') format('truetype');
+  src: url('/shoya/fonts/Gyosho.ttf') format('truetype');
 
   font-weight: normal;
 
